@@ -11,7 +11,7 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(urg_node_msgs REQUIRED)
-find_package(diagnostic_updater REQUIRED)
+#find_package(diagnostic_updater REQUIRED)
 #find_package(dynamic_reconfigure REQUIRED)
 find_package(laser_proc REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -27,7 +27,7 @@ find_package(Boost REQUIRED thread)
 set(INCLUDE_DIRS
   include
   ${urg_node_msgs_INCLUDE_DIRS}
-  ${diagnostic_updater_INCLUDE_DIRS}
+  #${diagnostic_updater_INCLUDE_DIRS}
   #${dynamic_reconfigure_INCLUDE_DIRS}
   ${laser_proc_INCLUDE_DIRS}
   ${rclcpp_INCLUDE_DIRS}
@@ -41,7 +41,7 @@ set(INCLUDE_DIRS
 
 set(LIBS
   ${urg_node_msgs_LIBRARIES}
-  ${diagnostic_updater_LIBRARIES}
+  #${diagnostic_updater_LIBRARIES}
   #${dynamic_reconfigure_LIBRARIES}
   ${laser_proc_LIBRARIES}
   ${rclcpp_LIBRARIES}
@@ -100,7 +100,7 @@ install(PROGRAMS
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
 ament_export_dependencies(urg_node_msgs)
-ament_export_dependencies(diagnostic_updater)
+#ament_export_dependencies(diagnostic_updater)
 #ament_export_dependencies(dynamic_reconfigure)
 ament_export_dependencies(laser_proc)
 ament_export_dependencies(rclcpp)

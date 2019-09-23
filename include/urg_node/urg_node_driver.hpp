@@ -40,9 +40,9 @@
 #include <rclcpp/rclcpp.hpp>
 //#include <dynamic_reconfigure/server.h>
 #include <laser_proc/LaserTransport.h>
-#include <diagnostic_updater/diagnostic_updater.hpp>
-#include <diagnostic_updater/publisher.hpp>
-#include <diagnostic_msgs/msg/diagnostic_status.hpp>
+//#include <diagnostic_updater/diagnostic_updater.h>
+//#include <diagnostic_updater/publisher.h>
+//#include <diagnostic_msgs/msg/diagnostic_status.hpp>
 //#include <urg_node/URGConfig.h>
 #include <std_srvs/srv/trigger.hpp>
 
@@ -84,8 +84,8 @@ private:
   rcl_interfaces::msg::SetParametersResult param_change_callback(
     const std::vector<rclcpp::Parameter> parameters);
   void calibrate_time_offset();
-  void updateDiagnostics();
-  void populateDiagnosticsStatus(diagnostic_updater::DiagnosticStatusWrapper & stat);
+//  void updateDiagnostics();
+//  void populateDiagnosticsStatus(diagnostic_updater::DiagnosticStatusWrapper & stat);
   void scanThread();
 
   void statusCallback(
@@ -94,14 +94,14 @@ private:
     const std_srvs::srv::Trigger::Response::SharedPtr res);
 
 
-  std::thread diagnostics_thread_;
+//  std::thread diagnostics_thread_;
   std::thread scan_thread_;
 
   std::unique_ptr<urg_node::URGCWrapper> urg_;
   //std::shared_ptr<dynamic_reconfigure::Server<urg_node::URGConfig> > srv_;  ///< Dynamic reconfigure server
-  diagnostic_updater::Updater diagnostic_updater_;
-  std::unique_ptr<diagnostic_updater::HeaderlessTopicDiagnostic> laser_freq_;
-  std::unique_ptr<diagnostic_updater::HeaderlessTopicDiagnostic> echoes_freq_;
+//  diagnostic_updater::Updater diagnostic_updater_;
+//  std::unique_ptr<diagnostic_updater::HeaderlessTopicDiagnostic> laser_freq_;
+//  std::unique_ptr<diagnostic_updater::HeaderlessTopicDiagnostic> echoes_freq_;
 
   std::mutex lidar_mutex_;
 
